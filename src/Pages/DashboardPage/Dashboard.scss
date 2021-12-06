@@ -1,0 +1,239 @@
+.dashboard {
+    position: absolute;
+    width: 75%;
+    height: max-content;
+    right: 0;
+    top: 10vh;
+
+    .subtitle {
+        position: absolute;
+        top: 5vh;
+        left: 3.5vw;
+        font-weight: 700;
+        font-size: 1.55em;
+        color: #128972;
+    }
+
+    .container {
+        position: relative;
+        width: 95%;
+        margin-left: 5%;
+        top: 13vh;
+        display: flex;
+        overflow-x: auto;
+        
+        .item {
+            // padding: 20px;
+            // background-color: aqua;
+            // min-width: 200px;
+            margin-right: 55px;
+
+            .plant-img {
+                border-radius: 27px 27px 0px 0px;
+                object-fit: cover;
+                width: 100%;
+                height: 80%;
+            }
+        }
+    }
+
+    .subtitle2 {
+        position: relative;
+        top: 16vh;
+        left: 3.5vw;
+        font-weight: 700;
+        font-size: 1.55em;
+        color: #128972;
+        max-width: max-content;
+    }
+
+    .care-section {
+        position: relative;
+        top: 20vh;
+        left: 3.5vw;
+        max-width: 90%;
+        min-width: 90%;
+        display: flex;
+
+        .tod {
+            position: relative;
+            min-width: 55%;
+            .tod-bg {
+                position: absolute;
+                object-fit: cover;
+                height: 30vh;
+                width: 40vw;
+                border-radius: 27px;
+                filter: brightness(0.7);
+            }
+
+            .tod-text {
+                color: white;
+                position: relative;
+                top: 5.2vh;
+                left: 3.2vw;
+                font-weight: 800;
+                font-size: 1.8em;
+
+                .tip {
+                    position: absolute;
+                    font-size: 0.8em;
+                    font-weight: 500;
+                    top: 9vh;
+                    left: 1vw;
+                    max-width: max-content;
+                    min-width: max-content;
+                }
+            }
+        }
+
+        .waterPlant {
+            position: relative;
+            left: 1vw;
+            top: -2.1vh;
+
+            img {
+                width: 26vw;
+            }
+
+            .data {
+                position: absolute;
+                top: 4.5vh;
+                left: 3.5vw;
+                
+                .title {
+                    color: #6bbeae;
+                    font-weight: 700;
+                    font-size: 1.4em;
+                }
+
+                .day {
+                    color: #6bbeae;
+                    font-weight: 600;
+                    font-size: 0.99em;
+                    padding-block: 12px;
+                }
+
+                .time {
+                    color: #6bbeae;
+                    font-weight: 600;
+                    font-size: 0.99em;
+                }
+
+                button {
+                    border: 1px solid #A1D6CE;
+                    background-color: #FAFFFE;
+                    color: #128972;
+                    font-weight: 600;
+                    font-size: 12px;
+                    padding: 8px 15px;
+                    border-radius: 10px;
+                    margin-top: 20px;
+                    transition: all ease 0.5s;
+
+                    &:hover {
+                        background-color: #f7fffd;
+                        color: #128972;
+                        box-shadow: 0px 0px 8px #1289719a;
+                        transition: all ease 0.5s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.modalBg {
+
+    .modal {
+        position: absolute;
+        top: 18%;
+        left: 6%;
+        display: flex;
+        padding-top: 6vh;
+        padding-left: 4vw;
+        padding-right: 4vw;
+        background-color: rgb(255, 255, 255);
+        border-radius: 25px;
+        height: 400px;
+        width: 600px;
+        z-index: 3;
+        box-shadow: 0px 20px 100px 0px rgba(0,0,0,0.541);
+        -webkit-box-shadow: 0px 20px 100px 0px rgba(0,0,0,0.541);
+        -moz-box-shadow: 0px 20px 16px 0px rgba(0, 0, 0, 0.541); 
+        display: flex;
+        flex-direction: column;
+
+        .health {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2vh;
+            color: #be1959;
+            font-weight: 700;
+            font-size: 22px;
+            img {
+                object-fit: contain;
+                width: 2vw;
+            }
+        }
+
+        .water {
+            display: flex;
+            align-items: center;
+            color: #1961be;
+            font-weight: 700;
+            font-size: 22px;
+            img {
+                object-fit: contain;
+                width: 2vw;
+            }
+        }
+
+        .file {
+            margin-top: 25px;;
+            height: 130px;
+            width: 60%;
+            border: 2px dashed #afe7d9;
+            border-radius: 10px;
+            position: relative;
+
+            img {
+                position: absolute;
+                top: 20%;
+                left: 25%;
+                filter: opacity(0.6);
+            }
+        }
+        button {
+            margin-top: 30px;
+            background-color: #CAF2EB;
+            color:#0F9D87;
+            font-weight: 700;
+            font-size: 15px;
+            border-radius: 10px;
+            padding: 10px 40px;
+            box-shadow: 0px 0px 19px 0px rgba(14, 114, 97, 0.308);
+            -webkit-box-shadow: 0px 0px 10px 0px rgba(14, 114, 97, 0.308);
+            -moz-box-shadow: 0px 0px 10px 0px rgba(14, 114, 97, 0.308);
+            transition: all ease 0.5s;
+
+            &:hover {
+                transition: all ease 0.5s;
+                box-shadow: 0px 0px 0px 0px rgba(14, 114, 97, 0.308);
+                -webkit-box-shadow: 0px 0px 0px 0px rgba(14, 114, 97, 0.308);
+                -moz-box-shadow: 0px 0px 0px 0px rgba(14, 114, 97, 0.308);                
+            }
+        }
+    }
+}
+
+.bg {
+    background-color: #b8b8b800;
+    min-height: 120%;
+    min-width: 100%;
+    position: absolute;
+    top:0;
+    left: 0vw;
+    overflow-x: hidden;
+    z-index: 2;
+}

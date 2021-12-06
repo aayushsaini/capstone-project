@@ -1,0 +1,87 @@
+.navbar {
+    // position: absolute;
+    top: -10vh;
+    max-width: 25vw;
+    min-width: 25vw;
+    min-height: 100vh;
+    max-height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #E2F3EF;
+    text-decoration: none;
+    z-index: 2;
+
+    .logo {
+        position: absolute;
+        left: 5vw;
+        top: 3vh;
+        width: auto;
+        height: 46px;
+        margin: 0;
+    }
+
+    .nav {
+        display: flex;
+        height: 24vh;
+        width: max-content;
+        position: relative;
+        left: 5vw;
+        top: 12vh;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        a {
+            color: #279A84;
+            font-weight: 800;
+            text-decoration: none;
+
+        }
+
+        .nav-item1 {
+            font-weight: 700;
+            font-size: 20px;
+            color: #279A84;
+            width: max-content;
+            padding-left: 20px;
+            transition: all ease 0.5s;
+
+            &.active {
+                transition: all ease 0.51s;
+                background-color: #c8e7e1;
+                padding: 10px 20px 10px 20px;
+                border-radius: 30px;
+            }
+        }
+        .nav-item2 {
+            font-weight: 700;
+            font-size: 20px;
+            color: #279A84;
+            width: max-content;
+            padding-left: 20px;
+            transition: all ease 0.5s;
+
+            &.active {
+                transition: all ease 0.5s;
+                background-color: #c8e7e1;
+                padding: 10px 20px 10px 20px;
+                border-radius: 30px;
+            }
+        }        
+        .nav-item3 {
+            font-weight: 700;
+            font-size: 20px;
+            color: #279A84;
+            width: max-content;
+            padding-left: 20px;
+            transition: all ease 0.5s;
+
+            &.active {
+                transition: all ease 0.5s;
+                background-color: #c8e7e1;
+                padding: 10px 20px 10px 20px;
+                border-radius: 30px;
+            }
+        }
+    }
+}

@@ -1,0 +1,86 @@
+.mid-left {
+    position: relative;
+    top: 6vh;
+
+    .leaf4 {
+        position: absolute;
+        transform: scaleX(-1) rotate(-85deg);
+        width: 24px;
+        height: 24px;
+        left: 35vw;
+        top: 0vh;
+    }
+
+    .leaf5 {
+        position: absolute;
+        transform: scaleY(-1) rotate(-85deg);
+        width: 24px;
+        height: 24px;
+        left: 20vw;
+        top: 90vh;
+    }
+
+    .leaf6 {
+        position: absolute;
+        transform: scaleX(-1) rotate(390deg);
+        width: 24px;
+        height: 24px;
+        left: 80vw;
+        top: 70vh;
+    }
+
+    h1 {
+        top: 18vh;
+        left: 0vw;
+        font-size: 2.6vw;
+        font-weight: 700;
+        color: #11725d;
+        // color: #1f6e45;
+        position: relative;
+        line-height: 48px;
+
+        span {
+            position: relative;
+
+            .title-img {
+                position: absolute;
+                height: 45px;
+                bottom: 2px;
+                right: -2.2vw;
+            }
+        }
+    }
+    .box {
+        position: absolute;
+        left: -65vw;
+        top: 27vh;
+        background-color:#62b1a529;
+        border-radius: 130px;
+        height: 85vh;
+        width: 103vw;
+        transform: rotate(155deg);
+        z-index: 0;
+    }
+    .mid-bg {
+        position: absolute;
+        left: -35vw;
+        top: -10vh;
+        height: max-content;
+        width: 60vw;
+        // transform: rotate(4deg);
+        filter: contrast(1.4);
+        z-index: 0;
+        object-fit: cover;
+    }
+    .mid-img {
+        position: absolute;
+        top: 40vh;
+        // background-color: #11725d;
+        padding-left: 0;
+        margin-left: 0;
+        height: 34vh;
+        width: 30vw;
+        object-fit: contain;
+        z-index: 1;
+    }
+}

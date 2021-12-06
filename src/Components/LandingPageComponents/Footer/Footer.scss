@@ -1,0 +1,79 @@
+.footer {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins';
+    position: relative;
+
+    .leaf7 {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 10vw;
+        top: 15vh;
+        transform: scaleX(-1) rotate(-80deg);
+    }
+
+    .leaf8 {
+        position: absolute;
+        width: 26px;
+        height: 27px;
+        left: 25vw;
+        bottom: 4vh;
+        transform: scaleY(-1) rotate(-55deg);
+    }
+
+    .leaf9 {
+        position: absolute;
+        width: 21px;
+        height: 21px;
+        right: 5vw;
+        top: 25vh;
+        transform: scaleX(-1) rotate(72deg);
+    }
+
+    .cta {
+        position: relative;
+        text-align: center;
+        img {
+            width: 73vw;
+            object-fit: cover;
+        }
+        
+        span {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgba(238, 255, 245, 0.863);
+            font-weight: 800;
+            font-size: 32px;
+
+            button {
+                margin-top: 7vh;
+                border: 0px;
+                border-radius: 8px;
+                font-weight: 800;
+                font-size: 20px;
+                color: #325f4f;
+                background-color: #E8FCF5;
+                padding: 14px 60px;
+                box-shadow: 0px 0px 25px 2px rgba(0,0,0,0.75);
+                -webkit-box-shadow: 0px 0px 25px 2px rgba(0,0,0,0.75);
+                -moz-box-shadow: 0px 0px 25px 2px rgba(0,0,0,0.75);
+                transition: all ease 0.4s;
+                &:hover {
+                    cursor: pointer;
+                    transition: all ease 0.4s;
+                    background-color: #b1dbcd;
+                    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+                    -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+                    -moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+
+                }
+            }
+        }
+    }
+}

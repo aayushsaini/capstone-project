@@ -1,0 +1,9 @@
+header {
+    display: flex;
+    flex-direction: row;
+    max-width: 74vw;
+    min-width: 74vw;
+    min-height: calc(100vh - 85px);
+    max-height: calc(100vh - 85px);
+    margin-left: 13vw;
+}

@@ -1,0 +1,75 @@
+.left-header {
+    display: flex;
+    min-width: 50%;
+    align-items: center;
+    position: relative;
+    
+    .leaf1 {
+        position: absolute;
+        top: 58vh;
+        left: 23vw;
+        width: 20px;
+        height: 20px;
+    }
+
+    .content {
+        padding-bottom: 18vh;
+        .messsage {
+            margin-top: 30px;
+            width: max-content;
+            .heading {
+                font-size: 36px;
+                line-height: 40px;
+                position: relative;
+                color: #0a5f32;
+                font-weight: 700;
+                letter-spacing: 0.5px;
+                .usp {
+                    color: #14B15D;
+                }
+                span {
+                    position: relative;
+                    .flower {
+                        position: absolute;
+                        bottom: 6px;
+                        right: -2.2vw;
+                        object-fit: contain;
+                        width: 30px;
+                    }
+                }
+            }
+        }
+        .cta {
+            .cta-button {
+                display: block;
+                border: 0px;
+                color: rgb(255, 255, 255);
+                font-weight: 800;
+                font-size: 16px;
+                margin-top: 30px;
+                // background-color: #009b60;
+                background-color: #00ac72;
+                padding: 12px 50px;
+                box-shadow: 6px 6px 0px 0px #018150;
+                -webkit-box-shadow: 6px 6px 0px 0px #004530;
+                -moz-box-shadow: 6px 6px 0px 0px #004530;
+                transition: all ease 0.3s;
+                &:hover {
+                    transition: all ease 0.3s;
+                    cursor: pointer;
+                    box-shadow: 1px 1px 2px 0px #004530;
+                    -webkit-box-shadow: 1px 1px 2px 0px #004530;
+                    -moz-box-shadow: 1px 1px 2px 0px #004530;
+                }
+            }
+            .cta-help {
+                display: block;
+                font-size: 12px;
+                margin-top: 15px;
+                padding-left: 10px;
+                font-weight: 300;
+                color:#045a2c;
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+.home {
+    position: relative;
+    display: flex;
+
+    .bgImage {
+        position: fixed;
+        right: 0vw;
+        // top: 75vh;
+        bottom: 0vh;
+        overflow: auto;
+        height: 25vh;
+        z-index: -1;
+    }
+}
