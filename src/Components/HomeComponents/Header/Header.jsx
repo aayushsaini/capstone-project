@@ -1,12 +1,11 @@
 import React, { useContext } from 'react'
 import "./Header.scss"
-import { useLocation } from "react-router-dom"
+import { useLocation, Link } from "react-router-dom"
 import { Icon } from '@chakra-ui/react'
 import waterStat from "../../../Assets/waterStat.png"
 import healthStat from "../../../Assets/healthStat.png"
 import userContext from '../../../Context/MainContext'
 import { RiShoppingCart2Line } from "react-icons/all"
-
 
 const Header = (props) => {
 
@@ -19,6 +18,7 @@ const Header = (props) => {
     if (title[1] === "dashboard") pageTitle = "My Garden";
     else if (title[1] === "store") pageTitle = "Green Store";
     else if (title[1] === "community") pageTitle = "Garden Community"; 
+    else if (title[1] === "cart") pageTitle = "Your Cart "; 
 
 
     const plantsData = props.data;
@@ -49,8 +49,8 @@ const Header = (props) => {
                     </div> : null
                 )}
                 {(pageTitle === "Green Store" ?
-                        <div className="shopping-cart">
-                            <Icon className="icon" as={RiShoppingCart2Line} /><span>{user.cart.length}</span>
+                        <div className="shopping-cart" style={{'cursor':'pointer'}} >
+                            <Link exact to="/cart"><Icon className="icon" as={RiShoppingCart2Line} /><span>{user.cart.length}</span></Link>
                         </div> : null
                 )}
             </div>

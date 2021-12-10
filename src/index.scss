@@ -41,9 +41,11 @@ body {
    height: 8px;
    background-color: #F5F5F5;
    visibility: hidden;
+  //  display: none;
 
    &:hover {
      visibility: visible;
+    //  display: block;
    }
  }
  

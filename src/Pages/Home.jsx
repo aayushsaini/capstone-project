@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route, Switch, useHistory} from "react-router-
 import Dashboard from './DashboardPage/Dashboard'
 import useFetch from '../Hooks/useFetch'
 import Store from './StorePage/Store';
+import Cart from './Cart/Cart'
 
 const Home = (props) => {
 
@@ -60,6 +61,9 @@ const Home = (props) => {
                     </Route>
                     <Route exact path="/store">
                         <Store data1={plants} data2={gardenItems} />
+                    </Route>
+                    <Route exact path="/cart">
+                        <Cart />
                     </Route>
                     <Route exact path="/community"></Route>
                 </Switch>

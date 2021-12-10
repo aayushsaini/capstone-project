@@ -1,0 +1,93 @@
+.cart {
+    position: absolute;
+    width: 75%;
+    height: max-content;
+    right: 0;
+    top: 10vh;
+
+    .container {
+        margin-left: 3.5vw;
+        margin-top: 5.5vh;
+        max-height: 60vh;
+        overflow-y: scroll;
+
+        .item {
+            width: 40vw;
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: space-between;
+            // width: 40vw;
+            text-transform: capitalize;
+            font-size: 15px;
+            font-weight: 600;
+            color:#0b8f7b;
+            margin-bottom: 20px;
+            transition: all ease 0.3s;
+
+            &:hover {
+                background-color: rgba(17, 177, 150, 0.178);
+                border-radius: 12px;
+                transition: all ease 0.3s;
+                width: 40vw;
+                padding-left: 2px;
+            }
+
+            img {
+                object-fit: cover;
+                width: 4em;
+                height: 4em;
+                border-radius: 12px;
+            }
+            .itemName {
+                position: absolute;
+                left: 10vw;
+                max-width: 8vw;
+            }
+            .itemPrice {
+                position: absolute;
+                left: 20vw;
+            }
+            .itemQty {
+                position: absolute;
+                left: 28vw;
+            }
+            .totalPrice {
+                position: absolute;
+                left: 36vw;
+            }
+        }     
+    }
+
+    button {
+        margin-left: 3.5vw;
+        margin-top: 5vh;
+        // background-color: #CAF2EB;
+        background-color: #0F9D87;
+        color:#ecfffc;
+        font-weight: 700;
+        font-size: 15px;
+        border-radius: 10px;
+        padding: 10px 80px;
+        box-shadow: 0px 0px 19px 0px rgba(14, 114, 97, 0.452);
+        -webkit-box-shadow: 0px 0px 10px 0px rgba(14, 114, 97, 0.452);
+        -moz-box-shadow: 0px 0px 10px 0px rgba(14, 114, 97, 0.452);
+        transition: all ease 0.5s;
+
+        &:hover {
+            transition: all ease 0.5s;
+            box-shadow: 0px 0px 0px 0px rgba(14, 114, 97, 0.308);
+            -webkit-box-shadow: 0px 0px 0px 0px rgba(14, 114, 97, 0.308);
+            -moz-box-shadow: 0px 0px 0px 0px rgba(14, 114, 97, 0.308);                
+        }
+
+        &:disabled {
+            background-color: #ebebeb;
+            color:#8b8b8b;
+            cursor: default;
+            box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0);
+            -webkit-box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0);
+            -moz-box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0);
+        }
+    }
+}

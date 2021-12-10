@@ -3,6 +3,9 @@ import React, { useState, useContext } from 'react'
 import { Box, Text, Spacer } from '@chakra-ui/react'
 import './Store.scss';
 import mainContext from '../../Context/MainContext';
+
+
+
 const Store = (props) => {
 
     const plants = props.data1;
@@ -26,7 +29,7 @@ const Store = (props) => {
         <div className="store">
             <div className="main-container">
             <div className="subtitle">Plants 🪴</div>
-                <div className="container">
+                <div className="container"> 
                     {plants && plants.map((item) => {
                         return (
                             <>
@@ -85,19 +88,23 @@ export const Modal = (props) => {
     let itemMetaInfo = {
         img: "",
         name: "",
+        price:"",
         qty: "",
         totalPrice: ""
     };
 
     const [ totalItem, setTotalItem ] = useState(0);    //fn: updateTotal()
     const [ totalPrice, setTotalPrice ] = useState(0);      //fn: using updateTotal() to calc total price
+    const [ buttontapped, setButtonTapped ] = useState(false);
 
-    const addItemToCart = (itemImg, itemName, itemQty, price) => {
+    const addItemToCart = (itemImg, itemName, price, itemQty, totalAmt) => {
         itemMetaInfo.img = itemImg;
         itemMetaInfo.name = itemName;
+        itemMetaInfo.price = price;
         itemMetaInfo.qty = itemQty;
-        itemMetaInfo.totalPrice = price;
+        itemMetaInfo.totalPrice = totalAmt;
         cart.updateCart(itemMetaInfo);
+        setButtonTapped(true);
     }
 
     const updateTotal = (op) => {
@@ -128,7 +135,7 @@ export const Modal = (props) => {
                         <span className="price"><b style={{'color':'#128972', 'fontWeight':'800'}}>Price:</b> <span style={{'color':'#128972', 'fontWeight':'500'}}>{props.price}</span></span>
                         <Spacer />
                         <div className="modify-quantity">
-                            <button onClick={() => updateTotal('+')}>+</button><button onClick={() => updateTotal('-')}>-</button>
+                            <button disabled={buttontapped}  onClick={() => updateTotal('+')}>+</button><button disabled={buttontapped}  onClick={() => updateTotal('-')}>-</button>
                         </div>
                         <Spacer pb={4} />
                         <span><b style={{'color':'#128972', 'fontWeight':'800'}}>Qty: </b> &nbsp;<span style={{'color':'#128972', 'fontWeight':'600'}}>{totalItem}&nbsp;{totalItem>0?props.name:null}</span></span>
@@ -138,7 +145,7 @@ export const Modal = (props) => {
                 <Spacer />
                 <span><b style={{'color':'#128972', 'fontWeight':'800'}}>Total: </b><span style={{'color':'#128972', 'fontWeight':'500'}}>₹{totalPrice}</span></span>
                 <Spacer />
-                <button onClick={() => addItemToCart(props.img, props.name, totalItem, totalPrice)}>Add to Cart</button>
+                <button disabled={buttontapped} onClick={() => addItemToCart(props.img, props.name, props.price, totalItem, totalPrice)}>{buttontapped?"Added to Your Cart": "Add to Cart"}</button>
             </div>
         </div>
     );
