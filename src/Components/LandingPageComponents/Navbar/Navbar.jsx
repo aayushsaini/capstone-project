@@ -1,16 +1,30 @@
 import React, { useContext } from 'react'
-import userContext from '../../../Context/User/UserContext'
+import mainContext from '../../../Context/MainContext'
 import logo from "../../../Assets/logo.png"
 import "./Navbar.scss"
 import { authentication } from '../../../firebase-config'
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
+// import { signInWithPopup, GoogleAuthProvider, getAuth, onAuthStateChanged  } from 'firebase/auth'
 import { useHistory } from "react-router-dom";
 
 
 const Navbar = () => {
     const history = useHistory();
 
-    const user = useContext(userContext);
+    const user = useContext(mainContext);
+    
+    // const auth = getAuth();
+    // onAuthStateChanged(auth, (user) => {
+    // if (user) {
+    //     // User is signed in, see docs for a list of available properties
+    //     // https://firebase.google.com/docs/reference/js/firebase.User
+    //     const uid = user.uid;
+    //     console.log("User found");
+    //     // ...
+    // } else {
+    //     console.log("No user...")
+    // }
+    // });
 
     const SignInWithGoogle = () => {
 

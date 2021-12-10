@@ -2,12 +2,12 @@ import Home from "./Pages/Home";
 import LandingPage from "./Pages/LandingPage";
 import React from "react";
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import UserState from "./Context/User/UserState";
+import MainState from "./Context/MainState";
 
 function App() {
 
   return (
-    <UserState>
+    <MainState>
       <Router>
         <div className="App">
           <Switch>
@@ -20,7 +20,7 @@ function App() {
           </Switch>
         </div>
       </Router>
-    </UserState>
+    </MainState>
   );
 }
 

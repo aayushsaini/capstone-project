@@ -8,7 +8,7 @@ import cross from '../../Assets/cross.png'
 import scanIcon from '../../Assets/scanIcon.png'
 import { useDropzone } from 'react-dropzone';
 import { useHistory } from 'react-router-dom'
-import userContext from '../../Context/User/UserContext'
+import userContext from '../../Context/MainContext'
 
 
 const Dashboard = (props) => {
@@ -60,7 +60,7 @@ const Dashboard = (props) => {
                         <div className="day">☀️ Tommorow</div>
                         <div className="time">🕖 7:00 AM</div>
                         <br/>
-                        <button>Set Reminder</button>
+                        <button onClick={() => alert("Your reminder has been set!")}>Set Reminder</button>
                     </div>
                 </div>
             </div>

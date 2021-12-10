@@ -1,23 +1,22 @@
 import React, { useContext } from 'react'
 import "./Header.scss"
 import { useLocation } from "react-router-dom"
-import { Spacer } from '@chakra-ui/react'
-import userImg from "../../../Assets/user.png"
+import { Icon } from '@chakra-ui/react'
 import waterStat from "../../../Assets/waterStat.png"
 import healthStat from "../../../Assets/healthStat.png"
-import userContext from '../../../Context/User/UserContext'
+import userContext from '../../../Context/MainContext'
+import { RiShoppingCart2Line } from "react-icons/all"
 
 
 const Header = (props) => {
 
     const user = useContext(userContext);
-    const userProfileImg = userImg;
 
     const location = useLocation();
     const { pathname } = location;
     const title = pathname.split("/");
     let pageTitle;
-    if (title[1] === "dashboard") pageTitle = "My garden";
+    if (title[1] === "dashboard") pageTitle = "My Garden";
     else if (title[1] === "store") pageTitle = "Green Store";
     else if (title[1] === "community") pageTitle = "Garden Community"; 
 
@@ -43,10 +42,17 @@ const Header = (props) => {
     return (
         <div className="header">
             <div className="title">{pageTitle}
-                <div className="stats">
-                    <img src={waterStat} className="img1" alt="" /><span className="data1"> {water}</span> 
-                    <img src={healthStat} className="img2" alt="" /><span className="data2"> {health}</span> 
-                </div>
+                {(pageTitle === "My Garden" ?
+                    <div className="stats">
+                        <img src={waterStat} className="img1" alt="" /><span className="data1"> {water}</span> 
+                        <img src={healthStat} className="img2" alt="" /><span className="data2"> {health}</span> 
+                    </div> : null
+                )}
+                {(pageTitle === "Green Store" ?
+                        <div className="shopping-cart">
+                            <Icon className="icon" as={RiShoppingCart2Line} /><span>{user.cart.length}</span>
+                        </div> : null
+                )}
             </div>
             <div className="user">
                 <div className="greet-user"><span>Hi,</span> {user.userData.userFirstName}</div>

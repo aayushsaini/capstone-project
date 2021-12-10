@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import userContext from '../../../Context/User/UserContext'
+import mainContext from '../../../Context/MainContext'
 
 import "./Footer.scss"
 import image from "../../../Assets/bigcta.png"
@@ -16,7 +16,7 @@ const Footer = () => {
 
     const history = useHistory();
 
-    const user = useContext(userContext);
+    const user = useContext(mainContext);
 
     const SignInWithGoogle = () => {
 

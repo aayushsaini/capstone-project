@@ -1,0 +1,152 @@
+.store {
+    position: absolute;
+    width: 75%;
+    height: max-content;
+    right: 0;
+    top: 10vh;
+
+    .main-container {
+        // background-color: antiquewhite;
+        height: max-content;
+        padding-left: 3.5vw;
+
+        .subtitle {
+            padding-top:5vh;
+            padding-bottom: 3vh;
+            font-weight: 700;
+            font-size: 1.55em;
+            color: #128972;
+        }
+
+        .container {
+            // position: relative;
+            width: 100%;
+            // top: 13vh;
+            display: flex;
+            overflow-x: auto;
+
+            .item {
+                // padding: 20px;
+                // background-color: aqua;
+                // min-width: 200px;
+                margin-right: 55px;
+
+                .plant-img {
+                    border-radius: 27px 27px 0px 0px;
+                    object-fit: cover;
+                    width: 100%;
+                    height: 80%;
+                }
+            }
+        }
+    }
+
+}
+.modalBg {
+    transition: all ease 1s;
+    .modal {
+        transition: all ease 1s;
+        position: fixed;
+        top: 48%;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        padding-top: 6vh;
+        padding-left: 4vw;
+        padding-right: 4vw;
+        padding-bottom: 6vh;
+        background-color: rgb(255, 255, 255);
+        border-radius: 25px;
+        height: 400px;
+        width: 600px;
+        z-index: 3;
+        box-shadow: 0px 20px 100px 0px rgba(3, 71, 44, 0.541);
+        -webkit-box-shadow: 0px 20px 100px 0px rgba(3, 71, 44, 0.541);
+        -moz-box-shadow: 0px 20px 16px 0px rgba(3, 71, 44, 0.541);
+        display: flex;
+        flex-direction: column;
+
+        .product {
+            display: flex;
+            position: relative;
+            // background-color: red;
+            max-height: max-content;
+            img {
+                border-radius: 20px;
+                object-fit: cover;
+                min-width: 10em;
+                max-width: 10em;
+                min-height: 10em;
+                max-height: 10em;
+            }
+
+            .product-info {
+                margin-left: 4vw;
+                display: flex;
+                flex-direction: column;
+
+                .name {
+                    color: #0f7c66;
+                    text-transform: capitalize;
+                    font-weight: 500;
+                    margin-bottom: 5px;
+                }
+
+                .category {
+                    text-transform: capitalize;
+                    color: #0f7c66;
+                    font-weight: 500;
+                    margin-bottom: 5px;
+                }
+
+                .modify-quantity{
+                    display: flex;
+                    min-width: 190px;
+                    button {
+                        min-width: 40px;
+                        height: 40px;
+                        border-radius: 50px;
+                        padding: 0px;
+                        font-size: 26px;
+                        font-weight: 400;
+                        margin-right: 20px;
+                    }
+                }
+            }
+        }
+
+        button {
+            margin-top: 30px;
+            background-color: #CAF2EB;
+            color:#0F9D87;
+            font-weight: 700;
+            font-size: 15px;
+            border-radius: 10px;
+            padding: 10px 40px;
+            box-shadow: 0px 0px 19px 0px rgba(14, 114, 97, 0.308);
+            -webkit-box-shadow: 0px 0px 10px 0px rgba(14, 114, 97, 0.308);
+            -moz-box-shadow: 0px 0px 10px 0px rgba(14, 114, 97, 0.308);
+            transition: all ease 0.5s;
+
+            &:hover {
+                transition: all ease 0.5s;
+                box-shadow: 0px 0px 0px 0px rgba(14, 114, 97, 0.308);
+                -webkit-box-shadow: 0px 0px 0px 0px rgba(14, 114, 97, 0.308);
+                -moz-box-shadow: 0px 0px 0px 0px rgba(14, 114, 97, 0.308);                
+            }
+        }
+    }
+}
+
+
+.bg {
+    background-color: #b8b8b800;
+    min-height: 120%;
+    min-width: 100%;
+    position: absolute;
+    top:0;
+    left: 0vw;
+    overflow-x: hidden;
+    z-index: 2;
+}

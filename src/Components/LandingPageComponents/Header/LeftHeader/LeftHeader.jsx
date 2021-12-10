@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import userContext from '../../../../Context/User/UserContext'
+import mainContext from '../../../../Context/MainContext'
 import "./LeftHeader.scss"
 import sunflower from "../../../../Assets/sunflower.png"
 import leaf1 from "../../../../Assets/Path8.png"
@@ -11,7 +11,7 @@ const LeftHeader = () => {
 
     const history = useHistory();
 
-    const user = useContext(userContext);
+    const user = useContext(mainContext);
 
     const SignInWithGoogle = () => {
 
