@@ -1,67 +1,70 @@
 {
-    "plants": [
-        {
-            "id":"1",
-            "name":"rose",
-            "image": "https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-            "health": "good",
-            "water": 1
-        },
-        {
-            "id":"2",
-            "name":"potato",
-            "image": "https://images.pexels.com/photos/144248/potatoes-vegetables-erdfrucht-bio-144248.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-            "health": "bad",
-            "water": 1
-        },
-        {
-            "id":"3",
-            "name":"sunflower",
-            "image": "https://images.pexels.com/photos/6429840/pexels-photo-6429840.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-            "health": "good",
-            "water": 1
-        },
-        {
-            "id":"4",
-            "name":"ladyfinger",
-            "image": "https://gardenerspath.com/wp-content/uploads/2019/04/Grow-the-Best-Okra-with-These-Tips.jpg",
-            "health": "good",
-            "water": 1
-        },
-        {
-            "id":"5",
-            "name":"rose",
-            "image": "https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-            "health": "bad",
-            "water": 1
-        },
-        {
-            "id":"6",
-            "name":"tomato",
-            "image": "https://images.pexels.com/photos/5214147/pexels-photo-5214147.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-            "health": "good",
-            "water": 1
-        },
-        {
-            "id":"7",
-            "name":"tomato",
-            "image": "https://images.pexels.com/photos/5214147/pexels-photo-5214147.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-            "health": "good",
-            "water": 1
-        },
-        {
-            "id":"8",
-            "name":"potato",
-            "image": "https://images.pexels.com/photos/144248/potatoes-vegetables-erdfrucht-bio-144248.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-            "health": "good",
-            "water": 1
-        },
-        {
-            "id":"9",
-            "name":"tomato",
-            "image": "https://images.pexels.com/photos/5214147/pexels-photo-5214147.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-            "health": "good",
-            "water": 1
-        }
-    ]
+  "plants": [
+    {
+      "id": "1",
+      "name": "rose",
+      "image": "https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "health": "good",
+      "water": 1
+    },
+    {
+      "id": "2",
+      "name": "potato",
+      "image": "https://images.pexels.com/photos/144248/potatoes-vegetables-erdfrucht-bio-144248.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "health": "bad",
+      "water": 1
+    },
+    {
+      "id": "3",
+      "name": "sunflower",
+      "image": "https://images.pexels.com/photos/6429840/pexels-photo-6429840.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "health": "good",
+      "water": 1
+    },
+    {
+      "id": "4",
+      "name": "ladyfinger",
+      "image": "https://gardenerspath.com/wp-content/uploads/2019/04/Grow-the-Best-Okra-with-These-Tips.jpg",
+      "health": "good",
+      "water": 1
+    },
+    {
+      "id": "5",
+      "name": "rose",
+      "image": "https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "health": "bad",
+      "water": 1
+    },
+    {
+      "id": "6",
+      "name": "tomato",
+      "image": "https://images.pexels.com/photos/5214147/pexels-photo-5214147.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "health": "good",
+      "water": 1
+    },
+    {
+      "id": "7",
+      "name": "tomato",
+      "image": "https://images.pexels.com/photos/5214147/pexels-photo-5214147.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "health": "good",
+      "water": 1
+    },
+    {
+      "id": "8",
+      "name": "potato",
+      "image": "https://images.pexels.com/photos/144248/potatoes-vegetables-erdfrucht-bio-144248.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "health": "good",
+      "water": 1
+    },
+    {
+      "id": "9",
+      "name": "tomato",
+      "image": "https://images.pexels.com/photos/5214147/pexels-photo-5214147.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "health": "good",
+      "water": 1
+    }
+  ],
+  "blogs": [
+
+  ]
 }

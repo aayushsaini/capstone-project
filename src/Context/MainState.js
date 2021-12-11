@@ -31,8 +31,14 @@ const MainState = (props) => {
         setTotal(total+1);
     }
 
+    //Blog's context
+    const [isBlogRefresh, setIsBlogRefreshed] = useState(0);
+    const blogRefresh = () => {
+        setIsBlogRefreshed(isBlogRefresh+1);
+    }
+
     return  (
-        <MainContext.Provider value={{userData, updateUser, cart, updateCart}}>
+        <MainContext.Provider value={{userData, updateUser, cart, updateCart, isBlogRefresh, blogRefresh}}>
             {props.children}
         </MainContext.Provider>
     )

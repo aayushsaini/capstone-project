@@ -1,6 +1,5 @@
-import React, { createRef, useContext } from 'react'
+import React, { useContext } from 'react'
 import "./Cart.scss"
-import { useHistory } from 'react-router-dom'
 import mainContext from "../../Context/MainContext"
 
 const Cart = () => {

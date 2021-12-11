@@ -11,6 +11,7 @@ import Dashboard from './DashboardPage/Dashboard'
 import useFetch from '../Hooks/useFetch'
 import Store from './StorePage/Store';
 import Cart from './Cart/Cart'
+import CommunityPage from './CommunityPage/CommunityPage'
 
 const Home = (props) => {
 
@@ -21,7 +22,7 @@ const Home = (props) => {
         history.push('/');
     }
 
-    let data = useFetch('http://localhost:3090/plants');    
+    let data = useFetch('https://my-garden-public-data.herokuapp.com/plants');    
     const plantsData = data.data;
 
 
@@ -65,7 +66,9 @@ const Home = (props) => {
                     <Route exact path="/cart">
                         <Cart />
                     </Route>
-                    <Route exact path="/community"></Route>
+                    <Route exact path="/community">
+                        <CommunityPage />
+                    </Route>
                 </Switch>
             </div>
         </Router>

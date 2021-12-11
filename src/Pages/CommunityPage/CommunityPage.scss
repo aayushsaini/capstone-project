@@ -1,0 +1,59 @@
+.communityPage {
+    position: absolute;
+    width: 75%;
+    height: max-content;
+    right: 0;
+    top: 12vh;
+    color: #128972;
+
+    .container {
+        height: max-content;
+        padding-left: 3.5vw;
+
+        .blog {
+            // background-color: #bdbdbd;
+            background-color: #E2F3EF;
+            max-width: 59vw;
+            padding: 20px 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+
+            .blog-head {
+                display: flex;
+                align-items: center;
+
+                img {
+                    object-fit: cover;
+                    width: 3.2em;
+                    height: 3.2em;
+                    border-radius: 50px;
+                    border: 2px solid #128972;
+                }
+    
+                .left {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 15px;
+                    .title {
+                        font-weight: 700;
+                        font-size: 20px;
+                    }
+
+                    .author {
+                        font-size: 14px;
+                    }
+                }
+            }
+            .content {
+                font-weight: 400;
+                font-size: 16px;
+                margin-top: 15px;
+                justify-content: center;
+                margin-bottom: 5px;
+                margin-left: 10px;
+                margin-right: 10px;
+                white-space: pre-wrap;
+            }
+        }
+    }
+}

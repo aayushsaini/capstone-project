@@ -4,8 +4,8 @@
     top: 0vh;
     min-height: 10vh;
     max-height: 10vh;
-    min-width: 71vw;
-    max-width: 71vw;
+    min-width: 75.5vw;
+    max-width: 75.5vw;
     padding-top: 1vh;
     display: flex;
     align-items: center;
@@ -15,7 +15,7 @@
     // color: #0b7a55;
     .title {
         justify-content: flex-start;
-        width: 80%;
+        width: 76%;
         padding-left: 4vw;
         color: #128972;
         font-weight: 800;
@@ -107,7 +107,7 @@
         flex-direction: row;
         padding-top: 0vh;
         position: relative;
-        right: 0px;
+        right: 20px;
         align-items: center;
         justify-content: space-evenly;
 
