@@ -98,7 +98,7 @@ export const Modal = (props) => {
         }
     })
 
-    const handleClick = () => {
+    const handleClick = async () => {
         // fetch('https://us-central1-potatodisease.cloudfunctions.net/predict', {
         //     method:'POST',
         //     headers: {"Content-Type":"application/json"},
@@ -108,14 +108,14 @@ export const Modal = (props) => {
         //     onClose();
         //     context.blogRefresh();
         // })
-        console.log(files[0])
-        axios.post('https://us-central1-potatodisease.cloudfunctions.net/predict', files[0])
-        .then((res) => {
-             console.log(res);
-        })
-        .catch((err) => { 
-            console.log(err)
-        });
+        let formData = new FormData();
+        formData.append("file", files[0]);
+        let res = await axios({
+            method: "post",
+            url: 'https://us-central1-potatodisease.cloudfunctions.net/predict',
+            data: formData,
+          });
+        console.log("--->",res.data);
     }
 
     console.log(files);
