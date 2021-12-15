@@ -9,6 +9,7 @@ import scanIcon from '../../Assets/scanIcon.png'
 import { useDropzone } from 'react-dropzone';
 import { useHistory } from 'react-router-dom'
 import userContext from '../../Context/MainContext'
+import axios from "axios";
 
 
 const Dashboard = (props) => {
@@ -97,13 +98,36 @@ export const Modal = (props) => {
         }
     })
 
+    const handleClick = () => {
+        // fetch('https://us-central1-potatodisease.cloudfunctions.net/predict', {
+        //     method:'POST',
+        //     headers: {"Content-Type":"application/json"},
+        //     body: JSON.stringify(blog)
+        // }).then(() => {
+        //     alert("Blog Posted 🎉");
+        //     onClose();
+        //     context.blogRefresh();
+        // })
+        console.log(files[0])
+        axios.post('https://us-central1-potatodisease.cloudfunctions.net/predict', files[0])
+        .then((res) => {
+             console.log(res);
+        })
+        .catch((err) => { 
+            console.log(err)
+        });
+    }
+
+    console.log(files);
+
     return (
         <div className="modalBg">
             <div className="modal">
                 <span className="health">Plant's Health <Spacer />{health==="good"?<img src={tick} alt="" />:<img src={cross} alt="" />}</span>
                 <span className="water">Plant Watered <Spacer />{water!==0?<img src={tick} alt="" />:<img src={cross} alt="" />}</span>
                 <center><div className="file" {...getRootProps()}><input {...getInputProps()}  /><img src={scanIcon} alt=""></img></div></center>
-                <center><button>Scan My Plant</button></center>
+                {/* <center>{files?<button onClick={handleClick}>Scan My Plant</button>:<button disabled>Scan My Plant</button>}</center> */}
+                <center><button onClick={handleClick}>Scan My Plant</button></center>
                 {console.log(files)}
             </div>
         </div>
