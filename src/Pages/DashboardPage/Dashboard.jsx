@@ -5,6 +5,7 @@ import todBg from '../../Assets/todBg.png'
 import waterPlantBg from '../../Assets/waterPlantBg.png'
 import tick from '../../Assets/true.png'
 import cross from '../../Assets/cross.png'
+import success from "../../Assets/success.png"
 import scanIcon from '../../Assets/scanIcon.png'
 import { useDropzone } from 'react-dropzone';
 import { useHistory } from 'react-router-dom'
@@ -89,7 +90,7 @@ export const Modal = (props) => {
     const { getRootProps, getInputProps } = useDropzone({
         accept: "image/*",
         onDrop: (acceptedFiles) => {
-            console.log("....",acceptedFiles);
+            // console.log("....",acceptedFiles);
             setFiles(
                 acceptedFiles.map((file) => Object.assign(file, {
                     preview: URL.createObjectURL(file)
@@ -98,37 +99,39 @@ export const Modal = (props) => {
         }
     })
 
+    const [plantHealth, setPlantHealth] = useState(null);
+    const [confidence, setConfidence] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+
     const handleClick = async () => {
-        // fetch('https://us-central1-potatodisease.cloudfunctions.net/predict', {
-        //     method:'POST',
-        //     headers: {"Content-Type":"application/json"},
-        //     body: JSON.stringify(blog)
-        // }).then(() => {
-        //     alert("Blog Posted 🎉");
-        //     onClose();
-        //     context.blogRefresh();
-        // })
+        setIsLoading(true);
         let formData = new FormData();
         formData.append("file", files[0]);
         let res = await axios({
             method: "post",
-            url: 'https://us-central1-potatodisease.cloudfunctions.net/predict',
+            url: '/predict',
             data: formData,
           });
         console.log("--->",res.data);
+        setPlantHealth(res.data.class);
+        setConfidence(res.data.confidence);
+        setIsLoading(false);
     }
 
-    console.log(files);
+    // console.log(formData);
 
     return (
         <div className="modalBg">
             <div className="modal">
-                <span className="health">Plant's Health <Spacer />{health==="good"?<img src={tick} alt="" />:<img src={cross} alt="" />}</span>
-                <span className="water">Plant Watered <Spacer />{water!==0?<img src={tick} alt="" />:<img src={cross} alt="" />}</span>
-                <center><div className="file" {...getRootProps()}><input {...getInputProps()}  /><img src={scanIcon} alt=""></img></div></center>
+                {/* <span className="health">Plant's Health <Spacer />{health==="good"?<img src={tick} alt="" />:<img src={cross} alt="" />}</span> */}
+                {/* <span className="health">Plant's Health <Spacer />{health==="good"?<img src={tick} alt="" />:<img src={cross} alt="" />}</span> */}
+                <span className="health">Plant's Health <Spacer />{plantHealth?plantHealth:(<span style={{'fontWeight':'400'}}>Upload image to test</span>)}</span>
+                {/* <span className="water">Plant Watered <Spacer />{water!==0?<img src={tick} alt="" />:<img src={cross} alt="" />}</span> */}
+                <span className="water">{confidence?"Confidence":"Plant Watered?"} <Spacer />{confidence?confidence:(water!==0?<img src={tick} alt="" />:<img src={cross} alt="" />) }</span>
+                <center><div className="file" {...getRootProps()}><input {...getInputProps()}  />{files[0]?(<img src={success} style={{'width':'100px', 'marginLeft':'15px', 'marginTop':'20px','objectFit':'cover'}} alt="" />):(<img src={scanIcon} alt="" />)}</div></center>
                 {/* <center>{files?<button onClick={handleClick}>Scan My Plant</button>:<button disabled>Scan My Plant</button>}</center> */}
-                <center><button onClick={handleClick}>Scan My Plant</button></center>
-                {console.log(files)}
+                <center><button onClick={handleClick}>{isLoading?"Please wait...": "Scan My Plant"}</button></center>
+                {console.log(files[0])}
             </div>
         </div>
     );
