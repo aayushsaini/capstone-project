@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import './Dashboard.scss'
-import { Box, Text, Spacer } from '@chakra-ui/react'
+import { Box, Text, Spacer, Spinner } from '@chakra-ui/react'
 import todBg from '../../Assets/todBg.png'
 import waterPlantBg from '../../Assets/waterPlantBg.png'
 import tick from '../../Assets/true.png'
@@ -128,9 +128,9 @@ export const Modal = (props) => {
                 <span className="health">Plant's Health <Spacer />{plantHealth?plantHealth:(<span style={{'fontWeight':'400'}}>Upload image to test</span>)}</span>
                 {/* <span className="water">Plant Watered <Spacer />{water!==0?<img src={tick} alt="" />:<img src={cross} alt="" />}</span> */}
                 <span className="water">{confidence?"Confidence":"Plant Watered?"} <Spacer />{confidence?confidence:(water!==0?<img src={tick} alt="" />:<img src={cross} alt="" />) }</span>
-                <center><div className="file" {...getRootProps()}><input {...getInputProps()}  />{files[0]?(<img src={success} style={{'width':'100px', 'marginLeft':'15px', 'marginTop':'20px','objectFit':'cover'}} alt="" />):(<img src={scanIcon} alt="" />)}</div></center>
+                <center><div className="file" {...getRootProps()}><input {...getInputProps()}  />{files[0]?(<img src={success} style={{'width':'100px', 'marginLeft':'15px', 'marginTop':'20px','objectFit':'cover'}} alt="" />):(<img src={scanIcon} style={{'cursor':'pointer'}} alt="" />)}</div></center>
                 {/* <center>{files?<button onClick={handleClick}>Scan My Plant</button>:<button disabled>Scan My Plant</button>}</center> */}
-                <center><button onClick={handleClick}>{isLoading?"Please wait...": "Scan My Plant"}</button></center>
+                <center><button onClick={handleClick}>{isLoading?(<Spinner />): "Scan My Plant"}</button></center>
                 {console.log(files[0])}
             </div>
         </div>
