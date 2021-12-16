@@ -84,7 +84,7 @@ export const Modal = (props) => {
     const [ files, setFiles ] = useState([]);
     // const [ image, setImage ] = useState();
     // const id = props.id;
-    const health = props.health;
+    // const health = props.health;
     const water = props.water;
 
     const { getRootProps, getInputProps } = useDropzone({
