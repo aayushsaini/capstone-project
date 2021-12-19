@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./Navbar.scss"
 import logo from "../../../Assets/logo.png"
 import { useLocation, Link } from "react-router-dom";
+import welcome from  "../../../Assets/welcome.png"
+import mainContext from '../../../Context/MainContext'
 
 const Navbar = () => {
+
+    const user = useContext(mainContext);
 
     //assigning location variable
     const location = useLocation();
@@ -15,6 +19,10 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <img src={logo} alt="" className="logo" />
+                {splitLocation[1]==="home"?<>
+                                                <img src={welcome} className="bgImage2" alt="" />
+                                                <span className="welcome">Welcome, {user.userData.userFirstName}!👋</span>
+                                           </>:null}
             <div className="nav">
                 <div className={splitLocation[1] === "dashboard" ? "nav-item1 active" : "nav-item1"}>
                     <Link exact to="/dashboard"><span className="link">Dashboard</span></Link>

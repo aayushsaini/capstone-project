@@ -85,3 +85,26 @@
         }
     }
 }
+
+.bgImage2 {
+    position: absolute;
+    top: 40vh;
+    left: 50vw;
+    transform: translate(10%, -40%);
+    // translate: ;
+    height: 40vh;
+    z-index: -1;
+}
+.welcome {
+    position: absolute;
+    top: 67vh;
+    left: 50vw;
+    min-width: max-content;
+    transform: translate(20%, 0%);
+    // translate: ;
+    height: 40vh;
+    color: #50a589b9;
+    font-weight: 700;
+    font-size: 23px;
+    z-index: 1;
+}
