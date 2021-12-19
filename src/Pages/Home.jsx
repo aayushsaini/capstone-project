@@ -6,7 +6,7 @@ import "./Home.scss"
 import Header from '../Components/HomeComponents/Header/Header'
 import Navbar from '../Components/HomeComponents/Navbar/Navbar'
 import bgImage from "../Assets/home-bg.png"
-import { BrowserRouter as Router, Route, Switch, useHistory, useLocation} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, useHistory } from "react-router-dom";
 import Dashboard from './DashboardPage/Dashboard'
 import useFetch from '../Hooks/useFetch'
 import Store from './StorePage/Store';
