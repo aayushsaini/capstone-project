@@ -10,6 +10,7 @@ const Store = (props) => {
 
     const plants = props.data1;
     const gardenItems = props.data2;
+    const fertilizers = props.data3;
 
     const [modal, setShowModal] = useState(false);
     const [cartItem, setCartItem] = useState(null);
@@ -33,7 +34,7 @@ const Store = (props) => {
                     {plants && plants.map((item) => {
                         return (
                             <>
-                                <Box onClick={() => handleClick(item.imgSrc, item.name, "plants", item.price)} className="item" bgColor="#E2F3EF" minW="200px" maxW="200px" h="220px" style={{'cursor': 'pointer'}} borderRadius="27px">
+                                <Box boxShadow='base' onClick={() => handleClick(item.imgSrc, item.name, "plants", item.price)} className="item" bgColor="#E2F3EF" minW="200px" maxW="200px" h="220px" style={{'cursor': 'pointer'}} borderRadius="27px">
                                     <img src={item.imgSrc} className="plant-img" alt="" />
                                     <Text color="#279A84" textAlign="center" pt="10px" textTransform="capitalize" fontWeight="700">{item.name}</Text>
                                 </Box>
@@ -46,7 +47,7 @@ const Store = (props) => {
                     {gardenItems && gardenItems.map((item) => {
                         return (
                             <>
-                                <Box onClick={() => handleClick(item.imgSrc, item.name, "Seeds", item.price)} className="item" bgColor="#E2F3EF" minW="200px" maxW="200px" h="220px" style={{'cursor': 'pointer'}} borderRadius="27px">
+                                <Box boxShadow='base' onClick={() => handleClick(item.imgSrc, item.name, "Seeds", item.price)} className="item" bgColor="#E2F3EF" minW="200px" maxW="200px" h="220px" style={{'cursor': 'pointer'}} borderRadius="27px">
                                     <img src={item.imgSrc} className="plant-img" alt="" />
                                     <Text color="#279A84" textAlign="center" pt="10px" textTransform="capitalize" fontWeight="700">{item.name}</Text>
                                 </Box>
@@ -56,10 +57,10 @@ const Store = (props) => {
                 </div>
                 <div className="subtitle">Fertilizers 🧑‍🔬</div>
                 <div className="container">
-                    {gardenItems && gardenItems.map((item) => {
+                    {fertilizers && fertilizers.map((item) => {
                         return (
                             <>
-                                <Box onClick={() => handleClick(item.imgSrc, item.name, "fertilizers", item.price)} className="item" bgColor="#E2F3EF" minW="200px" maxW="200px" h="220px" style={{'cursor': 'pointer'}} borderRadius="27px">
+                                <Box boxShadow='md' onClick={() => handleClick(item.imgSrc, item.name, "fertilizers", item.price)} className="item" bgColor="#E2F3EF" minW="200px" maxW="200px" h="220px" style={{'cursor': 'pointer'}} borderRadius="27px">
                                     <img src={item.imgSrc} className="plant-img" alt="" />
                                     <Text color="#279A84" textAlign="center" pt="10px" textTransform="capitalize" fontWeight="700">{item.name}</Text>
                                 </Box>

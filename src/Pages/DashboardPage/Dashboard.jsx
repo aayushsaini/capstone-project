@@ -11,6 +11,22 @@ import { useDropzone } from 'react-dropzone';
 import { useHistory } from 'react-router-dom'
 import userContext from '../../Context/MainContext'
 import axios from "axios";
+import { WarningIcon, WarningTwoIcon, CheckCircleIcon } from '@chakra-ui/icons'
+import {
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalFooter,
+    ModalBody, 
+    FormLabel,
+    ModalCloseButton,useDisclosure
+  } from '@chakra-ui/react'
+  import {
+    List,
+    ListItem,
+    ListIcon
+  } from '@chakra-ui/react'
 
 
 const Dashboard = (props) => {
@@ -35,16 +51,16 @@ const Dashboard = (props) => {
         setPlantWater(water);
     };
 
-
+// Color for unhealthy box & Text: #F7DCDC  #DB7777
     return (
         <div className="dashboard">
             <div className="subtitle">My Plants 🪴</div>
             <div className="container">
                 {plantsData && plantsData.map((plant) => {
                     return (
-                        <Box style={{'cursor': 'pointer'}} onClick={()=>handleClick(plant.health, plant.water, plant.id)} className="item" bgColor={plant.health==="good"?"#C7EAE3":"#F7DCDC"} minW="200px" maxW="200px" h="220px"  borderRadius="27px">
+                        <Box key={plant.id} style={{'cursor': 'pointer'}} onClick={()=>handleClick(plant.health, plant.water, plant.id)} className="item" bgColor={plant.health==="good"?"#C7EAE3":"#C7EAE3"} minW="200px" maxW="200px" h="220px"  borderRadius="27px">
                             <img src={plant.image} className="plant-img" alt="" />
-                            <Text textAlign="center" pt="10px" color={plant.health==="good"?"#57A2A2":"#DB7777"} textTransform="capitalize" fontWeight="700">{plant.name}</Text>
+                            <Text textAlign="center" pt="10px" color={plant.health==="good"?"#57A2A2":"#57A2A2"} textTransform="capitalize" fontWeight="700">{plant.name}</Text>
                         </Box>
                     );
                 })}
@@ -67,7 +83,7 @@ const Dashboard = (props) => {
                 </div>
             </div>
             {modal?<div className="bg" onClick={()=>setShowModal(false)}/>:null}
-            {modal?<Modal id={plantId} health={plantHealth} water={plantWater} />:null}
+            {modal?<Modalx id={plantId} health={plantHealth} water={plantWater} />:null}
         </div>
     )
 }
@@ -78,8 +94,9 @@ export const BG = () => {
     )
 }
 
-export const Modal = (props) => {
+export const Modalx = (props) => {
 
+    const { isOpen, onOpen, onClose } = useDisclosure()
 
     const [ files, setFiles ] = useState([]);
     // const [ image, setImage ] = useState();
@@ -102,6 +119,9 @@ export const Modal = (props) => {
     const [plantHealth, setPlantHealth] = useState(null);
     const [confidence, setConfidence] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
+    const [causes, setCauses] = useState(null);
+    // const [precaution, setPrecautions] = useState(null);
+    const [solutions, setSolutions] = useState(null);
 
     const handleClick = async () => {
         setIsLoading(true);
@@ -112,27 +132,53 @@ export const Modal = (props) => {
             url: '/predict',
             data: formData,
           });
-        console.log("--->",res.data);
         setPlantHealth(res.data.class);
         setConfidence(res.data.confidence);
+        setCauses(res.data.Cause);
+        setSolutions(res.data.Solution)
         setIsLoading(false);
     }
-
-    // console.log(formData);
 
     return (
         <div className="modalBg">
             <div className="modal">
-                {/* <span className="health">Plant's Health <Spacer />{health==="good"?<img src={tick} alt="" />:<img src={cross} alt="" />}</span> */}
-                {/* <span className="health">Plant's Health <Spacer />{health==="good"?<img src={tick} alt="" />:<img src={cross} alt="" />}</span> */}
-                <span className="health">Plant's Health <Spacer />{plantHealth?plantHealth:(<span style={{'fontWeight':'400'}}>Upload image to test</span>)}</span>
-                {/* <span className="water">Plant Watered <Spacer />{water!==0?<img src={tick} alt="" />:<img src={cross} alt="" />}</span> */}
+                <span className="health">Plant's Health <Spacer />{plantHealth?<>{plantHealth}<WarningIcon onClick={onOpen} w={5} h={5} ml={2} color="red.300" style={{'cursor':'pointer'}} /></>:(<span style={{'fontWeight':'400'}}>Upload image to test</span>)}</span>
                 <span className="water">{confidence?"Confidence":"Plant Watered?"} <Spacer />{confidence?confidence:(water!==0?<img src={tick} alt="" />:<img src={cross} alt="" />) }</span>
                 <center><div className="file" {...getRootProps()}><input {...getInputProps()}  />{files[0]?(<img src={success} style={{'width':'100px', 'marginLeft':'15px', 'marginTop':'20px','objectFit':'cover'}} alt="" />):(<img src={scanIcon} style={{'cursor':'pointer'}} alt="" />)}</div></center>
-                {/* <center>{files?<button onClick={handleClick}>Scan My Plant</button>:<button disabled>Scan My Plant</button>}</center> */}
                 <center><button onClick={handleClick}>{isLoading?(<Spinner />): "Scan My Plant"}</button></center>
-                {console.log(files[0])}
             </div>
+
+            <Modal isOpen={isOpen} onClose={onClose} size="lg">
+                <ModalOverlay/>
+                <ModalContent bgColor="#fff" color="black" >
+                    <form>
+                        <ModalHeader pt={5} mb={2} mx={0} maxW="32vw" maxH="7vh" minW="20vw" minH="7vh">Quick Info: {plantHealth}</ModalHeader>
+                        <ModalCloseButton />
+                        <ModalBody>
+                            <FormLabel style={{'color':'#591616'}} mb={0.5}>Causes:</FormLabel>
+                            {causes && causes.map((cause) => {
+                                return (
+                                    <List px={2}>
+                                        <ListItem><ListIcon as={WarningTwoIcon} style={{'marginBottom':'3px'}} w={4} h={4} color='orange.500'/><span>{cause}</span></ListItem>
+                                    </List>
+                                )
+                            })}
+                            <FormLabel style={{'color':'#591616'}} mt={2}>Solutions:</FormLabel>
+                            {solutions && solutions.map((solution) => {
+                                return (
+                                    <List px={2}>
+                                        <ListItem><ListIcon as={CheckCircleIcon} style={{'marginBottom':'3px'}} w={4} h={4} color='green.500'/><span>{solution}</span></ListItem>
+                                    </List>
+                                )
+                            })}
+                        </ModalBody>
+                        <ModalFooter>
+                            <center><span style={{'fontSize':'0.7em', 'color':'lightgrey'}}>Visit Community Page For More Info</span></center>
+                        </ModalFooter>
+                     </form>
+                </ModalContent>
+            </Modal>
+
         </div>
     );
 }

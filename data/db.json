@@ -4,8 +4,8 @@
       "id": "1",
       "name": "rose",
       "image": "https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      "health": "good",
-      "water": 1
+      "health": "bad",
+      "water": 0
     },
     {
       "id": "2",
@@ -62,9 +62,14 @@
       "image": "https://images.pexels.com/photos/5214147/pexels-photo-5214147.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "health": "good",
       "water": 1
+    },
+    {
+      "name": "pink",
+      "image": "googe.com",
+      "health": "good",
+      "water": 0,
+      "id": "wPd0lR4"
     }
   ],
-  "blogs": [
-
-  ]
+  "blogs": []
 }

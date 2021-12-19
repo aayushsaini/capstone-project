@@ -29,8 +29,11 @@ const Home = (props) => {
     const db = getFirestore();
     const colRef = collection(db, 'Store-plants');
     const colRef2 = collection(db, 'Store-raw');
+    const colRef3 = collection(db, 'Store-fertilizers');
     const [ plants, setPlants ] = useState([]);
     const [ gardenItems, setGardenItems ] = useState([]);
+    // eslint-disable-next-line 
+    const [ fertilizers, setFertilizers ] = useState([]);
     useEffect(() => {
         getDocs(colRef)
         .then((snapshot) => {
@@ -47,6 +50,14 @@ const Home = (props) => {
                 setGardenItems(arr => [...arr, data]);
             })
         })
+
+        getDocs(colRef3)
+        .then((snapshot) => {
+            snapshot.docs.forEach((doc) => {
+                var data = doc.data();
+                setFertilizers(arr => [...arr, data]);
+            })
+        })
         // eslint-disable-next-line
     }, [])
 
@@ -61,7 +72,7 @@ const Home = (props) => {
                         <Dashboard data={plantsData} />
                     </Route>
                     <Route exact path="/store">
-                        <Store data1={plants} data2={gardenItems} />
+                        <Store data1={plants} data2={gardenItems} data3={fertilizers} />
                     </Route>
                     <Route exact path="/cart">
                         <Cart />
