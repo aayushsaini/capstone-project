@@ -129,7 +129,7 @@ export const Modalx = (props) => {
         formData.append("file", files[0]);
         let res = await axios({
             method: "post",
-            url: '/predict',
+            url: 'https://us-central1-potatodisease.cloudfunctions.net/predict',
             data: formData,
           });
         setPlantHealth(res.data.class);
